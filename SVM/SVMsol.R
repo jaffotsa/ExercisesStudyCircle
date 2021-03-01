@@ -22,6 +22,15 @@ testset <- iris[iris$train==0,]
 trainset
 testset
 
+########## SIN BINARIZACION
+
+index <- c(1:nrow(iris))
+test.index <- sample(index, size = (length(index)/3))
+trainset <- iris[-test.index ,]
+testset <- iris[test.index ,]
+
+############
+
 #obten un indice para cada variable dentro de train
 trainColNum <- grep("train",names(trainset))
 # remueve las columnas flag de trainset y testset
