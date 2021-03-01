@@ -47,6 +47,12 @@ View(typeColNum)
 # con un costo de penalizacion default (C=1)
 svm_model <- svm(Species~ ., data=trainset, method="C-classification", kernel="linear")
 
+# Con tune para iterar al mejor modelo
+
+svm_model <- tune(svm,Species~ ., data=trainset, kernel="linear", cost=0.1, factor=F)
+
+svm_model$best.model
+
 
 # entrenar el conjunto para predicción
 pred_train <-predict(svm_model,trainset)
