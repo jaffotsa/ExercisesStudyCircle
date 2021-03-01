@@ -2,7 +2,7 @@
 # los datos de iris de forma LINEAL
 
 
-#carguenis la librería necesaria
+#carguemos la librería necesaria
 library(e1071)
 #carguemos iris
 data(iris)
